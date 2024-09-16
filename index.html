@@ -12,6 +12,10 @@
 </head>
 <body style="background-color: #fff;">
     <style>
+        .zs
+          {
+          color: black;
+          text-decoration: none;
         #loadback{
             background-color:#000;
             width:100%;
@@ -92,6 +96,9 @@
     </style>
     <div id="loadback">
         <div class="bg d">
+            <a class="zs" href="Shutdown.html">关机</a>
+            <a class="zs" href="Restart.html">重启</a>
+            <a class="zs" href="other/error.html">登陆</a>
             <span class="cc yl" style="left: 15vw;top: 35vh;--c:#fff35033;--s:220px;transition-delay: 350ms;animation-delay: 3.2s;"></span>
             <span class="cc yr" style="left: 80vw;top: 75vh;--c:#fff35043;--s:100px;transition-delay: 400ms;animation-delay: 2.4s;"></span>
             <span class="cc ys" style="left: 30vw;top: 20vh;--c:#fff34483;--s:150px;transition-delay: 0;animation-delay: 5.1s;"></span>
@@ -104,7 +111,7 @@
             
         </div>
         <script>
-            let d=['天云','   ','   ','   ','   ','   ','    '];
+            let d=['正在启动…','正在设置你的账户','正在检测','正在加载','检测更新…','无可用更新','即将呈现'];
             let t=[51000,4500,7500,11500,13000,17000,21000];
             let p=[
                 '天云','',
@@ -112,7 +119,7 @@
                 '',
                 '',
                 '',
-                'Loading...'
+                '未完成'
             ];
             setTimeout(() => {
                 document.querySelector('#loadback>.bg').className='bg';
