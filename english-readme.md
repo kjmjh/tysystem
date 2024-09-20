@@ -1,5 +1,7 @@
 <h1 align="center">TY</h1>
 
+English ｜ [简体中文](README.md)
+
 It refers to simulating the operating system on the web page, a project that I decided to start after watching the win12 web version.
 
 ## Preface
