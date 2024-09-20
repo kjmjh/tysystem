@@ -1,5 +1,7 @@
 <h1 align="center">天云</h1>
 
+[English](english-readme.md)
+
 是指在网页上模拟操作系统，看了win12网页版后决定开启的项目。
 
 ## 前言
