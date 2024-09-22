@@ -1,77 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天云网页版</title>
-    <style>
-body {
-    font-family: Arial, sans-serif;
-    overflow:hidden；
-}
-.st
-{
-color:white;
-text-decoration:none;
-}
-#startButton
-{
-background-color:white;
-border-radius:5px;
-}
-#startMenu {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #212121;
-    border-radius: 16px 16px 0 0;
-    padding: 16px;
-    width: 300px;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
-    transition: all 0.3s ease-in-out;
-    z-index: 1000;
-}
-
-#startMenu.hidden {
-    transform: translateX(-50%) translateY(100%);
-}
-
-#startMenu ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#startMenu li {
-    padding: 8px 0;
-    color: white;
-    cursor: pointer;
-}
-
-#startMenu li:hover {
-    background-color: #4a4a4a;
-}
-</style>
+    <title>天云</title>
+    <link rel="stylesheet" href="desktop.css">
 </head>
 <body>
-   <CENTER> <button id="startButton">︿</button>
-    <div id="startMenu" class="hidden">
-        <ul>
-            <a class="st">天云浏览器</a><br>
-            <a class="st">设置</a><br>
-            <a class="st">命令</a><br>
-            <a href="Shutdown.html"class="st">关机</a><br>
-            <a href="Restart.html"class="st">重启</a><br>
-            <a href="other/error.html"class="st">登陆</a><br>
-          </CENTER>
-            <!-- 更多菜单项可以添加在这里 -->
-        </ul>
+    <div id="desktop">
+        <div class="icon" onclick="openWindow('note')">笔记本</div>
+        <div class="icon" onclick="openWindow('file')">文件管理器</div>
     </div>
-    <script>
-     document.getElementById('startButton').addEventListener('click', function() {
-    const menu = document.getElementById('startMenu');
-    menu.classList.toggle('hidden');
-});
-    </script>
+
+    <div id="windows"></div>
+
+    <script src="desktop.js"></script>
 </body>
 </html>
