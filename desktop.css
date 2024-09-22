@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #87CEFA; /* 天空蓝 */
+}
+
+#desktop {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    background-color: #FFF;
+    border: 1px solid #CACFD2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.icon:hover {
+    background-color: #F0F0F0;
+}
+
+.window {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    border: 2px solid #000;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: none; /* 默认隐藏 */
+}
+
+.window-header {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 5px;
+    cursor: move;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.content {
+    margin-top: 10px;
+}
