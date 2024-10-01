@@ -3,17 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天云</title>
-    <link rel="stylesheet" href="desktop.css">
+    <title>天云网页版</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+#start-button {
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#start-button img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+#app-icons {
+    display: flex;
+    align-items: center;
+}
+
+.app-icon {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.app-icon:hover {
+    transform: scale(1.2);
+}
+
+.time {
+    color: white;
+    font-size: 16px;
+}
+
+#start-menu {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    width: 200px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.menu-header {
+    padding: 10px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-content {
+    padding: 10px;
+}
+
+.menu-item {
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu-item:hover {
+    background-color: #e1e1e1;
+}
+
+.hidden {
+    display: none;
+}
+    </style>
 </head>
 <body>
-    <div id="desktop">
-        <div class="icon" onclick="openWindow('note')">笔记本</div>
-        <div class="icon" onclick="openWindow('file')">文件管理器</div>
+    <div id="taskbar">
+        <div id="start-button" onclick="toggleMenu()">
+            <img src="svg/logo.svg" alt="开始" />
+            开始
+        </div>
+        <div id="app-icons">
+            <div class="app-icon">📁</div>
+            <div class="app-icon">🌐</div>
+            <div class="app-icon">💻</div>
+            <div class="app-icon">⚙️</div>
+        </div>
+        <div id="time" class="time"></div>
+        <div id="start-menu" class="hidden">
+            <div class="menu-header">
+                <h2>开始</h2>
+                <button onclick="toggleMenu()">关闭</button>
+            </div>
+            <div class="menu-content">
+                <div class="menu-item">天云应用商店</div>
+                <div class="menu-item">天云浏览器</div>
+                <div class="menu-item">文件管理</div>
+                <div class="menu-item">设置</div>
+                <div class="menu-item">关闭</div>
+            </div>
+        </div>
     </div>
+    <script>
+        function toggleMenu() {
+    const menu = document.getElementById('start-menu');
+    menu.classList.toggle('hidden');
+}
 
-    <div id="windows"></div>
+// 显示当前时间
+function updateTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    document.getElementById('time').textContent = `${hours}:${minutes}`;
+}
 
-    <script src="desktop.js"></script>
+// 每分钟更新一次时间
+setInterval(updateTime, 60000);
+updateTime();
+    </script>
 </body>
 </html>
