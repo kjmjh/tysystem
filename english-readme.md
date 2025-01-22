@@ -1,4 +1,4 @@
-<h1 align="center">TY</h1>
+<h1 align="center">Sky Could</h1>
 
 English ｜ [简体中文](README.md)
 
