@@ -1,6 +1,6 @@
 <h1 align="center">天云</h1>
 
->此项目已搁浅。[新的](https://github.com/kj23qaq/sky_could)
+>此项目已搁浅。[新的](https://github.com/kj23qaq/sky-could-os)
 
 [English](english-readme.md)｜简体中文
 
